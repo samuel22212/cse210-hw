@@ -1,4 +1,5 @@
 using System;
+using System.IO.Enumeration;
 
 class Program
 {
@@ -33,8 +34,9 @@ class Program
 
             }
             else if (input =="4")
-            {
-               // journal.Load()
+            {   Console.WriteLine("Please enter the name of the journal file: ");
+                String fileName = Console.ReadLine();
+                journal.Load(fileName);
             }
             else if (input =="5")
             {
