@@ -18,7 +18,7 @@ class Program
         string text = "ohmydarlingohmydarlingohmydaaaaarlingclemontine";
         try
         {
-            string[] lines = System.IO.File.ReadAllLines("C:/Users/samue/OneDrive/Desktop/cse210-hw/cse210-hw/prove/Develop03/" + filename);
+            string[] lines = System.IO.File.ReadAllLines(filename);
 
             if (lines[0].Contains("-"))
             {
