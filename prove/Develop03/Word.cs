@@ -12,7 +12,7 @@ class Word
     public Word(String text)
     {
         _isHidden = false;
-
+        _text = text;
     }
 
 
@@ -23,20 +23,20 @@ class Word
 
     public void Show()
     {
-
         _isHidden = false;
     }
 
     public string Display()
-    {
+    {   
+        string underscorestext = "";
         if (_isHidden == true)
         {
-            _text = "";
+           
             for (int i = 0; i < _text.Length; i++)
             {
-                _text = _text + "_";
+                underscorestext = underscorestext + "_";
             }
-            return _text;
+            return underscorestext;
         }
         else
         {
@@ -44,4 +44,8 @@ class Word
         }
     }
 
+    public bool getHidden()
+    {
+        return _isHidden;
+    }
 }
