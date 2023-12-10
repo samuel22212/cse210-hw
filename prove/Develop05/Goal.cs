@@ -20,8 +20,7 @@ else{
     string details =$"[ ] {_name} ({_description})";
     return details;
 }
-//need to be overriden for Checklist Goal. 
-//for Simple goal this needs to 
+//need to be overriden for Checklist Goal.
 //The code for this was flowing so naturally and then I hit this method and It's like a brick wall. How do I do this and How do I override it? 
 }
 }
