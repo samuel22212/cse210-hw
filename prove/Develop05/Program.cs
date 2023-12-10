@@ -47,7 +47,7 @@ class Program
                     else if (parsed == 3)
                     {
 
-                        goalie.CreateGoal(2);
+                        goalie.CreateGoal(3);
                     }
 
                 }
