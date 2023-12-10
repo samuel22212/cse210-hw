@@ -18,7 +18,8 @@ class Program
             Console.WriteLine("3. Save Goals");
             Console.WriteLine("4. Load Goals");
             Console.WriteLine("5. Record Completed Goal");
-            Console.WriteLine("6. Quit");
+            Console.WriteLine("6. Delete Goal.");
+            Console.WriteLine("7. Quit");
             string input = Console.ReadLine();
             parsed = int.Parse(input);
 
@@ -58,11 +59,11 @@ class Program
             }
             else if(parsed ==2)
             {
-                goalie.
+                goalie.ViewGoals();
             }
 
 
-        } while (parsed != 6);
+        } while (parsed != 7);
 
     }
 }

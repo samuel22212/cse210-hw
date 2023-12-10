@@ -12,7 +12,12 @@ _bonusPoints = bonusPoints;
 
 
 }
+public override string GetDeatilsString()
+{
 
+
+
+}
 
 
 

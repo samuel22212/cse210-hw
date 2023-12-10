@@ -11,7 +11,7 @@ _points = points;
 
 }
 public abstract bool IsComplete();
-public string GetDeatilsString(){
+public virtual string GetDeatilsString(){
 if (IsComplete()==true){
     string details = $"[x] {_name} ({_description})";
     return details;

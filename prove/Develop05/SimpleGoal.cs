@@ -6,10 +6,13 @@ public SimpleGoal(string name, string description, int points):base(name,descrip
 {
 _isComplete = false;
 
-
 }
-//basically a setter
-public void completeGoal(){
+    public override bool IsComplete()
+    {
+        return _isComplete;
+    }
+    //basically a setter
+    public void completeGoal(){
     _isComplete = true;
 
 }

@@ -63,10 +63,12 @@ class GoalManager
 
     }
     public void ViewGoals(){
+        int count =0;
         foreach (Goal g in _goals)
         {
-            Console.WriteLine(g.GetDeatilsString());
-
+            count ++;
+            Console.WriteLine($"{count}. {g.GetDeatilsString()}");
+            
         }
 
 
