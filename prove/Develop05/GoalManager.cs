@@ -1,5 +1,6 @@
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
-
+using System;
 class GoalManager
 {
 
@@ -62,15 +63,38 @@ class GoalManager
 
 
     }
-    public void ViewGoals(){
-        int count =0;
+    public void ViewGoals()
+    {
+        int count = 0;
         foreach (Goal g in _goals)
         {
-            count ++;
+            count++;
             Console.WriteLine($"{count}. {g.GetDeatilsString()}");
-            
+
         }
 
+    }
 
+    public void RecordEvent(int eventIndex)
+    {
+
+        _goals[eventIndex].RecordEvent();
+        _score = _score + _goals[eventIndex].GetPoints();
+    }
+
+    public void SaveGoals()
+    {
+        string filename = "goals.txt";
+        using (StreamWriter outputfile = new StreamWriter(filename))
+        {
+            outputfile.WriteLine(_score);
+
+            foreach (Goal g in _goals)
+            {
+                outputfile.WriteLine(g.GetDeatilsString());
+            }
+        }
+        Console.WriteLine("Goals Saved.");
+        Console.WriteLine();
     }
 }

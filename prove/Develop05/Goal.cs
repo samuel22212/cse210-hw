@@ -10,14 +10,16 @@ _name = name;
 _points = points;
 
 }
+public abstract int GetPoints();
 public abstract bool IsComplete();
+public abstract void RecordEvent();
 public virtual string GetDeatilsString(){
 if (IsComplete()==true){
-    string details = $"[x] {_name} ({_description})";
+    string details = $"[x] |{_name}| ({_description})";
     return details;
 }
 else{
-    string details =$"[ ] {_name} ({_description})";
+    string details =$"[ ] |{_name}| ({_description})";
     return details;
 }
 //need to be overriden for Checklist Goal.

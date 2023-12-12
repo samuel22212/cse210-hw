@@ -4,7 +4,7 @@ using Microsoft.VisualBasic;
 class Program
 {
     static void Main(string[] args)
-    {
+    {   Console.Clear();
         int parsed;
         //menu
         GoalManager goalie = new GoalManager();
@@ -58,10 +58,20 @@ class Program
 
             }
             else if(parsed ==2)
-            {
+            {   Console.WriteLine("");
+                Console.WriteLine("Here are your Goals!");
+                Console.WriteLine("--------------------------------------");
                 goalie.ViewGoals();
             }
-
+            else if(parsed ==3){
+                goalie.SaveGoals();
+            }
+            else if(parsed == 5)
+            {   
+                Console.WriteLine("Which goal did you complete?");
+                parsed = int.Parse(Console.ReadLine());
+                goalie.RecordEvent(parsed-1);
+            }
 
         } while (parsed != 7);
 
