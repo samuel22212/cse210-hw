@@ -97,4 +97,25 @@ class GoalManager
         Console.WriteLine("Goals Saved.");
         Console.WriteLine();
     }
+
+    public void LoadGoals()
+    {
+        _goals.Clear();
+        string filename = "goals.txt";
+        string[] lines = System.IO.File.ReadAllLines(filename);
+        _score = int.Parse(lines[0]);
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("|");
+            Goal goal = new SimpleGoal(parts[0],parts[1],int.Parse(parts[2]));
+            _goals.Add(goal);
+        }
+
+    }
+
+    public void ClearGoals(){
+
+        _goals.Clear();
+        Console.WriteLine("Goals Cleared sucessfully");
+    }
 }

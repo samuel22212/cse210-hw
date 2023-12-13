@@ -18,7 +18,7 @@ class Program
             Console.WriteLine("3. Save Goals");
             Console.WriteLine("4. Load Goals");
             Console.WriteLine("5. Record Completed Goal");
-            Console.WriteLine("6. Delete Goal.");
+            Console.WriteLine("6. Delete Goals.");
             Console.WriteLine("7. Quit");
             string input = Console.ReadLine();
             parsed = int.Parse(input);
@@ -66,13 +66,25 @@ class Program
             else if(parsed ==3){
                 goalie.SaveGoals();
             }
+             else if(parsed ==4){
+                goalie.LoadGoals();
+            }
             else if(parsed == 5)
             {   
                 Console.WriteLine("Which goal did you complete?");
                 parsed = int.Parse(Console.ReadLine());
                 goalie.RecordEvent(parsed-1);
             }
+            else if (parsed == 6){
+                Console.WriteLine("Are you sure you want to delete your goals? Your score will not be reset.");
+                Console.WriteLine("(1). Yes");
+                Console.WriteLine("(2). No");
+                parsed = int.Parse(Console.ReadLine());
+                if (parsed == 1){
+                    goalie.ClearGoals();
 
+                }
+            }
         } while (parsed != 7);
 
     }
