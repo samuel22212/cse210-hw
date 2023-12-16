@@ -18,7 +18,7 @@ _comments = new List<Comment>();
 
 }
 
-public void addComment(string commenter, string text){
+public void AddComment(string commenter, string text){
 Comment comment = new Comment(commenter,text);
 _comments.Add(comment);
 }
@@ -28,10 +28,17 @@ commentCount = _comments.Count();
 return commentCount;
 
 }
+public void DisplayAllComments(){
 
+   foreach(Comment c in _comments){
+      c.DisplayComment();
+
+   }  
+
+}
 public string getInformationString(){
 
-   string stringy =$"{_title} by {_uploader}. Length: {_length/60} minutes. and {_length%60} seconds.  ";
+   string stringy =$"{_title} by {_uploader}. Length: {_length/60} minutes and {_length%60} seconds.  ";
    return stringy;
 }
 
